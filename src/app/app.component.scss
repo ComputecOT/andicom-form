@@ -1,0 +1,95 @@
+input, select, textarea{
+    &:focus{
+        outline: none;
+        border-color: #003037;
+        box-shadow: 0 0 5px #003037;
+    }
+}
+
+textarea{
+    resize: none;
+}
+
+.logo{
+    height: auto;
+}
+
+.shadow-custom {
+    background-color: #ffffff;
+    height: 65px;
+    box-shadow: 0px 1px 4px 1px rgba(0, 0, 0, 0.2);
+}
+
+.nav-link{
+    color: #003037;
+}
+
+.app-custom{
+    min-height: calc(100vh - 65px);
+}
+
+.size_letter{
+    width: 100%;
+}
+
+.btn-custom{
+    background-color: #79f099;
+    font-weight: 400;
+    color: #003037;
+    transition: all .5s ease;
+    position: relative;
+
+    &:hover{
+        background-color: #003037;
+        color: #79f099;
+    }
+
+    &:disabled{
+        border: none;
+    }
+}
+
+.required-field{
+    font-size: 11px;
+    color: tomato;
+    line-height: 20px;
+}
+
+.content{
+    font-size: 14px;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.img-izq{
+    max-width: 40px;
+    max-height: 40px;
+}
+
+.document{
+    position: relative;
+
+    &:after{
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 10px;
+        width: 30%;
+        background-color: #003037;
+    }
+
+    &::before{
+        content: "";
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        height: 10px;
+        width: 100%;
+        background-color: #003037;
+    }
+}
