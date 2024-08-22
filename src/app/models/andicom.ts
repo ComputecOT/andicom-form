@@ -4,6 +4,6 @@ export interface Andicom {
 	Celular: string,
     Email: string,
     Empresa : string,
-    URL_logo: string,
-    parrafos:[]
+    "URL logo": string,
+    Parrafos:[]
 }

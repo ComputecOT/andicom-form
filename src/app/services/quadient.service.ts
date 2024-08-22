@@ -14,9 +14,11 @@ export class QuadientService {
   constructor() { }
 
   public sendFormQuadient(andicom:Andicom):Observable<string>{
+    const andicoms:Andicom[] = [];
+    andicoms.push(andicom);
     
     return this.http
-                .post(this.pathBase, andicom, {responseType: 'text'})
+                .post(this.pathBase, andicoms, {responseType: 'text'})
                 .pipe(
                   catchError(this.handleError)
                 );

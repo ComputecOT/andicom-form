@@ -31,13 +31,13 @@ export class AppComponent implements OnInit {
   // Creacion del formulario
   private initFormCreate(): void {
     this.formCreate = this.formBuilder.group({
-      nombre: new FormControl('', [Validators.required]),
-      email: new FormControl('', [Validators.required, regexValidator(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, 'emailInvalido')]),
-      celular: new FormControl('', [Validators.required, regexValidator(/^3\d{9}$/, 'celularInvalido')]),
-      cargo: new FormControl(''),
-      empresa: new FormControl(''),
+      Nombre: new FormControl('', [Validators.required]),
+      Email: new FormControl('', [Validators.required, regexValidator(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, 'emailInvalido')]),
+      Celular: new FormControl('', [Validators.required, regexValidator(/^3\d{9}$/, 'celularInvalido')]),
+      Cargo: new FormControl(''),
+      Empresa: new FormControl(''),
       informacion: new FormControl(''),
-      url_logo: new FormControl('')
+      "URL logo": new FormControl('')
     });
   }
 
@@ -50,7 +50,7 @@ export class AppComponent implements OnInit {
 
     this.andicom = this.formCreate.value;
 
-    this.andicom.parrafos = this.formCreate
+    this.andicom.Parrafos = this.formCreate
                                 .get('informacion')?.value
                                 .split('\n')
                                 .filter((parrafo: string | any[]) => parrafo.length > 0);
