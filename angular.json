@@ -21,6 +21,8 @@
             ],
             "tsConfig": "tsconfig.app.json",
             "assets": [
+              "src/img",
+              "src/computec-favicon.png",
               "src/assets"
             ],
             "styles": [
@@ -86,6 +88,8 @@
             ],
             "tsConfig": "tsconfig.spec.json",
             "assets": [
+              "src/img",
+              "src/computec-favicon.png",
               "src/assets"
             ],
             "styles": [
