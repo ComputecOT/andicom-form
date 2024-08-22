@@ -27,12 +27,13 @@
 
             <button class="btn btn-custom w-100" (click)="sendToQuadient()"
                 [disabled]="!formCreate.valid">Generar</button>
-            
+
         </div>
 
         <div class="col-9 d-flex flex-column justify-content-center align-items-center bg-body pb-1">
             <div class="document shadow h-100 col-7 p-5">
-                <form [formGroup]="formCreate" class="p-3 h-100 content">
+                <form [formGroup]="formCreate"
+                    class="p-3 h-100 content d-flex flex-column justify-content-start">
 
                     <div class="row">
                         <p class="col-4 p-0">{{date}}</p>
@@ -42,41 +43,52 @@
                         </div>
                     </div>
 
-                    <div class="row mt-3 gap-2">
-                        <div class="col-8 p-0">
-                            <input type="text" class="form-control content" placeholder="Nombre"
-                                formControlName="nombre">
-                        </div>
-                        <div *ngIf="formCreate.get('nombre')?.invalid && formCreate.get('nombre')?.touched" class="col-3 required-field">
-                            *Campo obligatorio.
-                        </div>
+                    <div class="row mt-3 full-height">
+                        <div class="d-flex flex-column gap-2">
+                            <div class="row gap-2">
+                                <div class="col-8 p-0">
+                                    <input type="text" class="form-control content" placeholder="Nombre"
+                                        formControlName="nombre">
+                                </div>
+                                <div *ngIf="formCreate.get('nombre')?.invalid && formCreate.get('nombre')?.touched"
+                                    class="col-3 required-field">
+                                    *Campo obligatorio.
+                                </div>
 
-                        <div class="col-8 p-0">
-                            <input type="text" class="form-control content" placeholder="Email" formControlName="email">
-                        </div>
-                        <div *ngIf="formCreate.get('email')?.invalid && (formCreate.get('email')?.touched)" class="col-3 required-field">
-                            *Email no valido.
-                        </div>
+                                <div class="col-8 p-0">
+                                    <input type="text" class="form-control content" placeholder="Email"
+                                        formControlName="email">
+                                </div>
+                                <div *ngIf="formCreate.get('email')?.invalid && (formCreate.get('email')?.touched)"
+                                    class="col-3 required-field">
+                                    *Email no valido.
+                                </div>
 
-                        <div class="col-8 p-0">
-                            <input type="number" class="form-control content" placeholder="Celular"
-                                formControlName="celular">
-                        </div>
-                        <div *ngIf="formCreate.get('celular')?.invalid && formCreate.get('celular')?.touched" class="col-3 required-field">
-                            *Número no valido.
-                        </div>
+                                <div class="col-8 p-0">
+                                    <input type="number" class="form-control content" placeholder="Celular"
+                                        formControlName="celular">
+                                </div>
+                                <div *ngIf="formCreate.get('celular')?.invalid && formCreate.get('celular')?.touched"
+                                    class="col-3 required-field">
+                                    *Número no valido.
+                                </div>
 
-                        <div class="col-8 p-0">
-                            <input type="text" class="form-control content" placeholder="Cargo" formControlName="cargo">
-                        </div>
-                        <div class="col-8 p-0">
-                            <input type="text" class="form-control content" placeholder="Empresa"
-                                formControlName="empresa">
-                        </div>
+                                <div class="col-8 p-0">
+                                    <input type="text" class="form-control content" placeholder="Cargo"
+                                        formControlName="cargo">
+                                </div>
+                                <div class="col-8 p-0">
+                                    <input type="text" class="form-control content" placeholder="Empresa"
+                                        formControlName="empresa">
+                                </div>
+                            </div>
 
-                        <div class="col-12 p-0">
-                            <textarea class="form-control content" placeholder="Información" rows="11"
-                                formControlName="informacion"></textarea>
+                            <div class="row full-height">
+                                <div class="col-12 p-0">
+                                    <textarea class="form-control content h-100" placeholder="Información"
+                                        formControlName="informacion"></textarea>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </form>
