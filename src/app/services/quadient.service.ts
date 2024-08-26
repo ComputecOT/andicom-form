@@ -25,7 +25,18 @@ export class QuadientService {
   }
 
   private handleError(error: HttpErrorResponse): Observable<never> {
-    return throwError(() => new Error(`¡Valide los datos y póngase en contacto con el equipo de desarrollo! Codigo: ${error.status}`));
+    
+    let err = `¡Ocurrió un error! Codigo: ${error.status} Error: `;
+
+    if(error.status === 0){
+      err += `No se puede conectar con el servidor de Scaler, desactive el Global o comuníquese con el equipo de desarrollo.`; 
+    }
+
+    if(error.status === 400){
+      err += `Fallas en Scaler, ${error.error}`;
+    }
+
+    return throwError(() => new Error(err));
   }
 
 }
