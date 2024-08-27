@@ -33,7 +33,7 @@ export class QuadientService {
     }
 
     if(error.status === 400){
-      err += `Fallas en Scaler, ${error.error}`;
+      err += `${error.error}, Valide la imagen y vuelva a intentar.`;
     }
 
     return throwError(() => new Error(err));
